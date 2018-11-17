@@ -20,9 +20,25 @@
 			The Quote
 		</div>
 
-		<div id="todo">
-			<form onsubmit=""></form>
-			A Todo List
+		<div class="row" id="todo">
+			<div class="card">
+				<div class="card-header">
+					To Do List
+				</div>
+				<div class="card-body">
+					<p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+				</div>
+				<form onsubmit="app.controllers.todoCtrl.addTodoFromForm(event)">
+					<div class="form-group">
+						<input class="form-control" type="input">
+						<button type="submit" class="btn btn-primary">Submit</button>
+					</div>
+			</div>
+
+
+
+			</form>
+
 		</div>
 
 

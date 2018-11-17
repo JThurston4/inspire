@@ -11,16 +11,17 @@ function getTodos() {
 }
 
 function draw(todos) {
-	//WHAT IS MY PURPOSE?
 	//BUILD YOUR TODO TEMPLATE HERE
 	var template = ''
+	template = ``
+	document.getElementById("todo").innerHTML = template
 	//DONT FORGET TO LOOP
 }
 
 
 export default class TodoController {
 	constructor() {
-		// IF YOU WANT YOUR TODO LIST TO DRAW WHEN THE PAGE FIRST LOADS WHAT SHOULD YOU CALL HERE???
+		todoService.getTodos(draw)
 	}
 	// You will need four methods
 	// getTodos should request your api/todos and give an array of todos to your callback fn
