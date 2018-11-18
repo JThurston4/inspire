@@ -20,17 +20,17 @@
 			The Quote
 		</div>
 
-		<div class="row" id="todo">
+		<div class="row">
 			<div class="card">
 				<div class="card-header">
 					To Do List
 				</div>
 				<div class="card-body">
-					<p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+					<p class="card-text" id="todo">With supporting text below as a natural lead-in to additional content.</p>
 				</div>
 				<form onsubmit="app.controllers.todoCtrl.addTodoFromForm(event)">
 					<div class="form-group">
-						<input class="form-control" type="input">
+						<input class="form-control" type="text" name="added">
 						<button type="submit" class="btn btn-primary">Submit</button>
 					</div>
 			</div>

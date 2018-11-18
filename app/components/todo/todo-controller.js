@@ -13,7 +13,14 @@ function getTodos() {
 function draw(todos) {
 	//BUILD YOUR TODO TEMPLATE HERE
 	var template = ''
-	template = ``
+	for (let i = 0; i < todos.length; i++) {
+		template += `
+		<div class="form-check">
+    <input type="checkbox" class="form-check-input" onchange="app.controllers.todoCtrl.hi()">
+    <label class="form-check-label">${todos[i].description}</label>
+	</div>`
+
+	}
 	document.getElementById("todo").innerHTML = template
 	//DONT FORGET TO LOOP
 }
@@ -30,15 +37,19 @@ export default class TodoController {
 	// removeTodo takes in a todoId and sends a delete request to the server
 	// **** HINT: Everytime you make a change to any todo don't forget to get the todo list again
 
-
+	hi() {
+		console.log("checkkkkk")
+	}
 	addTodoFromForm(e) {
 		e.preventDefault() // <-- hey this time its a freebie don't forget this
 		// TAKE THE INFORMATION FORM THE FORM
 		var form = e.target
 		var todo = {
+			description: form.added.value
 			// DONT FORGET TO BUILD YOUR TODO OBJECT
 		}
 
+		console.log(todo)
 		//PASSES THE NEW TODO TO YOUR SERVICE
 		//DON'T FORGET TO REDRAW THE SCREEN WITH THE NEW TODO
 		//YOU SHOULDN'T NEED TO CHANGE THIS
