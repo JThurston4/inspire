@@ -7,3 +7,28 @@
 /* input[type=checkbox]:checked + label {
   text-decoration: line-through;
 } /*This is */
+
+.right {
+  display: flex;
+  justify-content: flex-end;
+  align-items:center;
+}
+
+.card-clr {
+  background-color: rgba(255, 255, 255, 0.356);
+}
+
+.footer {
+  display:flex;
+  justify-content: flex-end;
+  align-items: flex-end;
+}
+
+.empty-space {
+  height: 50vh;
+}
+
+.quote {
+  color: gray;
+  text-shadow: black, 1,1,2;
+}
