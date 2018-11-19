@@ -1,7 +1,7 @@
 import Image from "../../models/image-model.js";
 
 let url = '//bcw-getter.herokuapp.com/?url=';
-let url2 = 'http://www.splashbase.co/api/v1/images/search?query=mountains'
+let url2 = 'http://www.splashbase.co/api/v1/images/search?query=forest'
 let apiUrl = url + encodeURIComponent(url2);
 
 
