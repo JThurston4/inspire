@@ -23,7 +23,7 @@ export default class TodoService {
 				console.log(todoList)
 				draw(todoList)
 			})
-			.catch(logError)
+		// .catch(logError)
 	}
 
 	addTodo(todo, todoCallback) {
@@ -35,26 +35,35 @@ export default class TodoService {
 				// console.log(res.data.data)
 				todoCallback()
 			}) // <-- WHAT DO YOU DO AFTER CREATING A NEW TODO?
-			.catch(logError)
+		// .catch(logError)
 	}
 
-	toggleTodoStatus(todoId) {
+	toggleTodoStatus(todoId, getTodos) {
 		// MAKE SURE WE THINK THIS ONE THROUGH
 		//STEP 1: Find the todo by its index **HINT** todoList
-
 		var todo = {} ///MODIFY THIS LINE
-
+		for (let i = 0; i < todoList.length; i++) {
+			if (todoList[i]._id == todoId) {
+				todo = todoList[i]
+				todoList[i].completed = !todoList[i].completed
+				console.log(todo)
+			}
+		}
 		//STEP 2: Change the completed flag to the opposite of what is is **HINT** todo.completed = !todo.completed
 		todoApi.put(todoId, todo)
-			.then(function (res) {
+			.then(res => {
+				getTodos()
 				//DO YOU WANT TO DO ANYTHING WITH THIS?
 			})
-			.catch(logError)
+		// .catch(logError)
 	}
 
-	removeTodo() {
+	removeTodo(todoId, getTodos) {
 		// Umm this one is on you to write.... The method is a DELETE
-
+		todoApi.delete(todoId)
+			.then(res => {
+				getTodos()
+			}
+			)
 	}
-
 }

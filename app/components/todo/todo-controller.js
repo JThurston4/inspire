@@ -14,10 +14,14 @@ function draw(todos) {
 	//BUILD YOUR TODO TEMPLATE HERE
 	var template = ''
 	for (let i = 0; i < todos.length; i++) {
+		let checked = ''
+		if (todos[i].completed) {
+			checked = "checked"
+		}
 		template += `
 		<div class="form-check">
-    <input type="checkbox" class="form-check-input" onchange="app.controllers.todoCtrl.hi()">
-    <label class="form-check-label">${todos[i].description}</label>
+    <input type="checkbox" class= form-check-input" ${checked}onchange="app.controllers.todoCtrl.toggleTodoStatus('${todos[i]._id}')">
+		<label class="form-check-label">${todos[i].description} <i class="fas fa-trash-alt" onclick="app.controllers.todoCtrl.removeTodo('${todos[i]._id}')"></i></label>
 	</div>`
 
 	}
@@ -64,11 +68,21 @@ export default class TodoController {
 	}
 
 	removeTodo(todoId) {
+		console.log(todoId)
+		todoService.removeTodo(todoId, getTodos)
 		// ask the service to run the remove todo with this id
-
 		// ^^^^ THIS LINE OF CODE PROBABLY LOOKS VERY SIMILAR TO THE toggleTodoStatus
 	}
 
 
 
 }
+
+
+
+
+// toggleTodoStatus(todoId) {
+// 	// asks the service to edit the todo status
+// 	todoService.toggleTodoStatus(todoId, getTodos)
+// 	// YEP THATS IT FOR ME
+// }

@@ -3,3 +3,7 @@
   background-size: cover;
   background-position: center center;
 }
+
+/* input[type=checkbox]:checked + label {
+  text-decoration: line-through;
+} /*This is */
