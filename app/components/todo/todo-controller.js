@@ -21,7 +21,7 @@ function draw(todos) {
 		template += `
 		<div class="form-check">
     <input type="checkbox" class= form-check-input" ${checked}onchange="app.controllers.todoCtrl.toggleTodoStatus('${todos[i]._id}')">
-		<label class="form-check-label">${todos[i].description} <i class="fas fa-trash-alt" onclick="app.controllers.todoCtrl.removeTodo('${todos[i]._id}')"></i></label>
+		<label class="form-check-label">${todos[i].description} <i class="fas fa-trash-alt" style="color: #2a2a2a; text-shadow:none" onclick="app.controllers.todoCtrl.removeTodo('${todos[i]._id}')"></i></label>
 	</div>`
 
 	}
